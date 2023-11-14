@@ -18,7 +18,9 @@ class MasterCustomPaint extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     path.moveTo(30, 50);
-    path.lineTo(0, 0);
+    path.lineTo(30, 50);
+
+    path.quadraticBezierTo(30, 120, 30, 120);
     // path.moveTo(50, 50);
     // path.relativeLineTo(100, 150);
     // path.relativeQuadraticBezierTo(20, 20, 0, 40);

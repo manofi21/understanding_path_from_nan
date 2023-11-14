@@ -53,5 +53,19 @@ For running project : `flutter run`
  ```
 Dari code di atas artinya titik gambar akan di pindah ke 50,50 (x = 50, dan y = 50) dari tiitk 0,0. Lalu menggambar garis ke titik 50,50. Jika dijalankan tidak akan ada garis yang muncul, karena `lineTo` akan diminta untuk menggabar dari titik awal (yang sudah menjadi 50,50) ke titik tujuannya yang nilainya sama.
 
+###### Melengkungkan garis
+
+Garis bisa dilengkungkan dengan quadratic bezier curves(control 1 titik), cubic bezier curves(control 2 titik), dan arcs
+
+UNtuk quadratic bezier curves, parameter yang diminta 2 kali lipat dari `moveTo` atau `lineTo`. dimana titik (x,y) pertama untuk mengontrol sudut lengkungnya/ titik tarik lengkungnya, sedangkan titik (x,y) kedua untuk titik akhir nya. 
+
+```dart
+    path.moveTo(30, 50);
+    path.quadraticBezierTo(30, 120, 90, 120);
+```
+
+Jadi alur gambarnya dimulai dari titik gambar (0,0 atau titik moveTo) ditarik ke titik x,y pertama yaitu (30,120) sebagai titik lengkung dan ditarik lagi ke titik akhir yaitu (90,120). NOde jika garis lengkung dan garis titik sama, itu hanya akan menghasilkan garis lurus saja dan tidak berguna.
+
+
 ###### menggunakan relative.
 
