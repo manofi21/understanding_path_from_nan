@@ -7,4 +7,3 @@ After clone : `flutter pub get`
 For running project : `flutter run`
 
 ----
-
