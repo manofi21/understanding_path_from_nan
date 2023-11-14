@@ -14,3 +14,20 @@ For running project : `flutter run`
 
  ### :indonesia:
  ###### Untuk menggambar sebuah garis dari 1 titik ke titik lain, tiliskan code dalam sebuah class (yang di extends `CustomPainter`) pada lingkungan `paint`. Lalu untuk menampilkan garis dan titik bisa dengan menempatkan class CustomPainter tadi di widget `CustomPaint`.
+
+ ###### Didalam lingkungan paint, yang akan menggerakkan titik dan menggambar garis adalah class `Path` dan yang mengubah variasi garisnya adalah class `Paint`
+
+ ###### contoh penggunaanya sebagai berikut:
+ ```dart
+    // Path for drawing
+    final path = Path();
+
+    // Paint for styling path
+    final paint = Paint()
+        ..color = Colors.black
+        ..strokeWidth = 1.3
+        ..style = PaintingStyle.stroke;
+
+    // lakukan semua eksekusi dalam drawPath
+    canvas.drawPath(path, paint);
+ ```

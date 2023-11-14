@@ -11,6 +11,10 @@ class MasterCustomPaint extends CustomPainter {
     // Path for drawing
     final path = Path();
 
+    path.moveTo(50, 50);
+    path.lineTo(100, 150);
+
+
     // Paint for styling path
     final paint = Paint()
       ..color = Colors.black
