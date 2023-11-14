@@ -36,12 +36,18 @@ For running project : `flutter run`
  ```dart
     path.moveTo(50, 50);
  ```
+
+ ### NOTE: Setiap titik yang diminta dalam y sebetulnya akan diproses sebagai nilai negatif. Itu sebanya titik y mengarah ke bawah.
+
  parameter yang digunakan adalah titik x dan titik y (untuk parameter yang di input (x, y)). Misalkan seperti di contoh, maka titik untuk menggabar akan berpindah ke x = 50 dan y = 50.
 
  Untuk menggambar garis menggubakan `path.lineTo` :    
  ```dart
     path.lineTo(50, 50);
  ```
+
+ ![image](https://user-images.githubusercontent.com/54527045/282809623-ea09d3e7-410b-4e8b-835b-3f70d8bc5c8a.png)
+
  parameter yang digunakan juga sama (yaitu dengan x dan y). Dan permintaanya juga sama yaitu titik. 
 
  Misalkan seperti di contoh, maka garis akan digambarkan dari titik gambar sampai titik yang diminta (seperti contoh x = 50 dan y = 50).
@@ -65,15 +71,23 @@ Untuk __quadratic bezier curves__, parameter yang diminta 2 kali lipat dari `mov
 ```
 
 Jadi alur gambarnya dimulai dari titik gambar (0,0 atau titik moveTo) ditarik ke titik x,y pertama yaitu (30,120) sebagai titik lengkung dan ditarik lagi ke titik akhir yaitu (90,120). Node jika garis lengkung dan garis titik sama, itu hanya akan menghasilkan garis lurus saja dan tidak berguna.
+![image](https://user-images.githubusercontent.com/54527045/282810667-6c594e6b-1b0a-4bc5-b8e8-780f804af233.png)
 
 Untuk saran, mungkin tentukan saja dulu titik akhirnya ada dimana, baru titik tarik lengkungnya agar mempermudah menentukan seberapa meleneungnya garis yang dibuat.
 
-Untuk __cubic bezier curves__, titik tarik lengkungnya ada 2 di titik pertama dan titik ke-2. Lalu titik akhir sebagai titik ke-3 nya.
+Untuk melakukan cek hasil dari garis yang dibuat bisa di test [di sini](https://www.desmos.com/calculator/j3shfjmzt3)
+
+Untuk __cubic bezier curves__, titik tarik lengkungnya ada 2 di titik pertama (x1,y1) dan titik ke-2(x2,y2). Lalu titik akhir sebagai titik ke-3(x,y) nya. Untuk tiap parameternya bisa di deretekan seperti ini `path.cubcTo(x1,y1, x2, y2, x, y)`
 
 ```dart
     path.moveTo(0, 0);
     path.cubicTo(30.0, 0.0, 30.0, 40.0, 0.0, 40.0);
 ```
 
+Penjelasan code di atas, dari titik awal (yaitu 0,0) ditarik oleh titik pertama(yaitu x1,y1 dengan nilai 30.0,0.0) agar lengkung garis muncul. Lengkung tersebut diatur dari titik awal sampai dengan bagian tertentu. Lalu pada bagian titik 2 (x2, y2) akan melakukan hal yang sama tapi mengatur titik akhir (x,y) kebelakang. 
+
+![image](https://user-images.githubusercontent.com/54527045/282818041-ea6d3153-f273-4d08-9184-db0b037d2852.png)
+
+Untuk melakukan cek hasil dari garis yang dibuat bisa di test [di sini](https://www.desmos.com/calculator/ebdtbxgbq0)
 ###### menggunakan relative.
 
