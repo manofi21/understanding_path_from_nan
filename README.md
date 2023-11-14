@@ -57,15 +57,23 @@ Dari code di atas artinya titik gambar akan di pindah ke 50,50 (x = 50, dan y = 
 
 Garis bisa dilengkungkan dengan quadratic bezier curves(control 1 titik), cubic bezier curves(control 2 titik), dan arcs
 
-UNtuk quadratic bezier curves, parameter yang diminta 2 kali lipat dari `moveTo` atau `lineTo`. dimana titik (x,y) pertama untuk mengontrol sudut lengkungnya/ titik tarik lengkungnya, sedangkan titik (x,y) kedua untuk titik akhir nya. 
+Untuk __quadratic bezier curves__, parameter yang diminta 2 kali lipat dari `moveTo` atau `lineTo`. dimana titik (x,y) pertama untuk mengontrol sudut lengkungnya/ titik tarik lengkungnya, sedangkan titik (x,y) kedua untuk titik akhir nya. 
 
 ```dart
     path.moveTo(30, 50);
     path.quadraticBezierTo(30, 120, 90, 120);
 ```
 
-Jadi alur gambarnya dimulai dari titik gambar (0,0 atau titik moveTo) ditarik ke titik x,y pertama yaitu (30,120) sebagai titik lengkung dan ditarik lagi ke titik akhir yaitu (90,120). NOde jika garis lengkung dan garis titik sama, itu hanya akan menghasilkan garis lurus saja dan tidak berguna.
+Jadi alur gambarnya dimulai dari titik gambar (0,0 atau titik moveTo) ditarik ke titik x,y pertama yaitu (30,120) sebagai titik lengkung dan ditarik lagi ke titik akhir yaitu (90,120). Node jika garis lengkung dan garis titik sama, itu hanya akan menghasilkan garis lurus saja dan tidak berguna.
 
+Untuk saran, mungkin tentukan saja dulu titik akhirnya ada dimana, baru titik tarik lengkungnya agar mempermudah menentukan seberapa meleneungnya garis yang dibuat.
+
+Untuk __cubic bezier curves__, titik tarik lengkungnya ada 2 di titik pertama dan titik ke-2. Lalu titik akhir sebagai titik ke-3 nya.
+
+```dart
+    path.moveTo(0, 0);
+    path.cubicTo(30.0, 0.0, 30.0, 40.0, 0.0, 40.0);
+```
 
 ###### menggunakan relative.
 
