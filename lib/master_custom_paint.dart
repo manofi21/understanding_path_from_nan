@@ -11,15 +11,19 @@ class MasterCustomPaint extends CustomPainter {
     // Path for drawing
     final path = Path();
 
-    path.moveTo(50, 50);
-    path.lineTo(100, 150);
-
-
     // Paint for styling path
     final paint = Paint()
       ..color = Colors.black
       ..strokeWidth = 1.3
       ..style = PaintingStyle.stroke;
+
+    path.moveTo(30, 50);
+    path.lineTo(0, 0);
+    // path.moveTo(50, 50);
+    // path.relativeLineTo(100, 150);
+    // path.relativeQuadraticBezierTo(20, 20, 0, 40);
+    // path.relativeMoveTo(60, 60);
+    // path.relativeLineTo(20, 50);
 
     canvas.drawPath(path, paint);
   }

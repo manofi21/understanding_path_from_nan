@@ -31,3 +31,27 @@ For running project : `flutter run`
     // lakukan semua eksekusi dalam drawPath
     canvas.drawPath(path, paint);
  ```
+###### memindahkan titik dan menggambar garis
+ Untuk memindahkan titik menggubakan `path.moveTo` :    
+ ```dart
+    path.moveTo(50, 50);
+ ```
+ parameter yang digunakan adalah titik x dan titik y (untuk parameter yang di input (x, y)). Misalkan seperti di contoh, maka titik untuk menggabar akan berpindah ke x = 50 dan y = 50.
+
+ Untuk menggambar garis menggubakan `path.lineTo` :    
+ ```dart
+    path.lineTo(50, 50);
+ ```
+ parameter yang digunakan juga sama (yaitu dengan x dan y). Dan permintaanya juga sama yaitu titik. 
+
+ Misalkan seperti di contoh, maka garis akan digambarkan dari titik gambar sampai titik yang diminta (seperti contoh x = 50 dan y = 50).
+
+ point utama untuk menggunakan `lineTo` adalah jangan sama dengan titik gambarnya. Karena garis tidak akan bergerak jika titik yang diminta sama. Contoh:
+ ```dart
+    path.moveTo(50, 50);
+    path.lineTo(50, 50);
+ ```
+Dari code di atas artinya titik gambar akan di pindah ke 50,50 (x = 50, dan y = 50) dari tiitk 0,0. Lalu menggambar garis ke titik 50,50. Jika dijalankan tidak akan ada garis yang muncul, karena `lineTo` akan diminta untuk menggabar dari titik awal (yang sudah menjadi 50,50) ke titik tujuannya yang nilainya sama.
+
+###### menggunakan relative.
+
